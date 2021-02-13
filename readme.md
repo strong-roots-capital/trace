@@ -32,7 +32,7 @@ const debug = Debug('defaults')
 // "concurrency 4"
 const concurrency = pipe(
     O.fromNullable(getUserConcurrency()),
-    O.pipe(trace(default, 'concurrency')),
+    O.pipe(trace(debug, 'concurrency')),
     O.getOrElse(() => 1)
 )
 ```
