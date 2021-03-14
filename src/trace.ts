@@ -19,3 +19,24 @@ export function trace(
         return value
     }
 }
+
+/**
+ * Log `value` as pretty-printed JSON with optional `tag` and return
+ * `value`.
+ *
+ * Note: `JSON.stringify` is unsafe (will throw errors on some input)
+ * so this function is unsafe too.
+ */
+export function unsafeTraceJson(
+    logger: typeof console.log,
+    ...tag: unknown[]
+): <T>(value: T) => T {
+    return function trace<T>(value: T): T {
+        if (tag.length > 0) {
+            logger(...tag, JSON.stringify(value, null, 2))
+        } else {
+            logger(JSON.stringify(value, null, 2))
+        }
+        return value
+    }
+}
