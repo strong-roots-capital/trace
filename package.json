@@ -1,6 +1,6 @@
 {
     "name": "@strong-roots-capital/trace",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "description": "tap function to log a value with optional tag",
     "main": "dist/src/trace.js",
     "types": "dist/src/trace.d.ts",
