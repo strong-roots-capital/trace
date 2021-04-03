@@ -38,3 +38,23 @@ const concurrency = pipe(
 ```
 
 > Note: also works with `console.{info,log,warn,error}`
+
+## API
+
+### trace
+
+```typescript
+trace: (logger: typeof console.log, ...tag: unknown[]) => <T>(value: T) => T
+```
+
+### unsafeTraceJson
+
+```typescript
+trace: (logger: typeof console.log, ...tag: unknown[]) => <T>(value: T) => T
+```
+
+### IOtrace
+
+```typescript
+trace: (logger: typeof console.log, ...tag: unknown[]) => <T>(value: T) => () => T
+```

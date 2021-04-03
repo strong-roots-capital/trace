@@ -40,3 +40,22 @@ export function unsafeTraceJson(
         return value
     }
 }
+
+/**
+ * Return an IO to log `value` with optional `tag` and return `value`.
+ */
+export function IOtrace(
+    logger: typeof console.log,
+    ...tag: unknown[]
+): <T>(value: T) => () => T {
+    return function trace<T>(value: T): () => T {
+        return function (): T {
+            if (tag.length > 0) {
+                logger(...tag, value)
+            } else {
+                logger(value)
+            }
+            return value
+        }
+    }
+}
