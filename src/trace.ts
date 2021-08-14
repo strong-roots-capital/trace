@@ -49,7 +49,7 @@ export function IOtrace(
     ...tag: unknown[]
 ): <T>(value: T) => () => T {
     return function trace<T>(value: T): () => T {
-        return function (): T {
+        return function(): T {
             if (tag.length > 0) {
                 logger(...tag, value)
             } else {
