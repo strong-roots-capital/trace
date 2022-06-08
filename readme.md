@@ -23,7 +23,7 @@ npm install @strong-roots-capital/trace
 import { trace } from '@strong-roots-capital/trace'
 
 import Debug from 'debug'
-import * as O from 'fp-ts/Option
+import * as O from 'fp-ts/Option'
 import { pipe } from 'fp-ts/function'
 
 const debug = Debug('defaults')
