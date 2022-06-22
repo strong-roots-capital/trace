@@ -22,7 +22,10 @@
             hooks = {
               alejandra.enable = true;
               nix-linter.enable = true;
-              prettier.enable = true;
+              prettier = {
+                enable = true;
+                excludes = ["package-lock.json"];
+              };
               eslint = {
                 enable = true;
                 excludes = ["package-lock.json"];
