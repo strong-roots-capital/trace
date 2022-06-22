@@ -28,7 +28,7 @@
               };
               eslint = {
                 enable = true;
-                excludes = ["package-lock.json"];
+                excludes = ["package-lock.json" ".github/renovate.json" "tsconfig.json"];
               };
             };
             settings = {

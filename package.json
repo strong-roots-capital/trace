@@ -26,8 +26,8 @@
     "build": "tsc",
     "clean": "rm -rf -- dist",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "format:check": "prettier --list-different --ignore-unknown .",
-    "format:write": "prettier --write --ignore-unknown .",
+    "format": "prettier --list-different --ignore-unknown .",
+    "format:fix": "prettier --write --ignore-unknown .",
     "lint": "eslint --ext ts .",
     "lint:fix": "eslint --ext ts --fix .",
     "test": "nyc ava"
@@ -44,7 +44,7 @@
     "codecov": "^3.6.5",
     "eslint": "^8.0.0",
     "nyc": "^15.0.0",
-    "prettier": "1.19.1",
+    "prettier": "2.7.1",
     "semantic-release": "19.0.3",
     "ts-node": "^8.6.2",
     "typescript": "^3.8.2"
