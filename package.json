@@ -37,17 +37,17 @@
     "@ericcrosson/eslint-config": "3.0.0",
     "@ericcrosson/prettier-config": "1.0.0",
     "@semantic-release/git": "10.0.1",
-    "@types/node": "^13.7.4",
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@types/node": "13.13.38",
+    "@typescript-eslint/eslint-plugin": "5.29.0",
     "@typescript-eslint/parser": "5.0.0",
     "ava": "^3.4.0",
-    "codecov": "^3.6.5",
-    "eslint": "^8.0.0",
-    "nyc": "^15.0.0",
+    "codecov": "3.8.1",
+    "eslint": "8.18.0",
+    "nyc": "15.1.0",
     "prettier": "2.7.1",
     "semantic-release": "19.0.3",
-    "ts-node": "^8.6.2",
-    "typescript": "^3.8.2"
+    "ts-node": "8.10.2",
+    "typescript": "3.9.7"
   },
   "ava": {
     "extensions": [
