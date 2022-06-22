@@ -1,98 +1,78 @@
 {
-    "name": "@strong-roots-capital/trace",
-    "version": "1.2.0",
-    "description": "tap function to log a value with optional tag",
-    "main": "dist/src/trace.js",
-    "types": "dist/src/trace.d.ts",
-    "scripts": {
-        "prepublishOnly": "npm run clean && npm run compile",
-        "compile": "tsc",
-        "watch:compile": "nodemon -e 'ts json' -x 'npm run compile || true'",
-        "clean": "rimraf --no-glob dist",
-        "lint-staged": "lint-staged",
-        "ava": "ava -v",
-        "ava:fail-fast": "ava -v --fail-fast",
-        "ava:serial": "ava -v -s",
-        "watch:ava": "nodemon -e 'ts json' -x 'npm run ava || true'",
-        "watch:ava:fail-fast": "nodemon -e 'ts json' -x 'npm run ava:fail-fast || true'",
-        "watch:ava:serial": "nodemon -e 'ts json' -x 'npm run ava:serial || true'",
-        "watch:ava:bell": "nodemon -e 'ts json' -x 'npm run ava || echo -e \\\\a'",
-        "watch:ava:fail-fast:bell": "nodemon -e 'ts json' -x 'npm run ava:fail-fast || echo -e \\\\a'",
-        "watch:ava:serial:bell": "nodemon -e 'ts json' -x 'npm run ava:serial || echo -e \\\\a'",
-        "lint": "eslint --ext ts .",
-        "lint:fix": "eslint --ext ts --fix .",
-        "prettier:check": "prettier --list-different src/**/*.ts",
-        "prettier:write": "prettier --write src/**/*.ts",
-        "watch:lint": "nodemon -e 'ts js json' -x 'npm run lint || true'",
-        "test": "nyc ava",
-        "watch:test": "nodemon -e 'ts json' -x 'npm test || true'",
-        "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
-    },
-    "lint-staged": {
-        "*.ts": [
-            "eslint --fix",
-            "prettier --write"
-        ]
-    },
-    "pre-commit": "lint-staged",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/strong-roots-capital/trace.git"
-    },
-    "author": "Eric Crosson <eric.s.crosson@utexas.edu> (https://github.com/EricCrosson)",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/strong-roots-capital/trace/issues"
-    },
-    "homepage": "https://github.com/strong-roots-capital/trace",
-    "devDependencies": {
-        "@types/node": "^13.7.4",
-        "@typescript-eslint/eslint-plugin": "^2.20.0",
-        "@typescript-eslint/parser": "^2.20.0",
-        "ava": "^3.4.0",
-        "codecov": "^3.6.5",
-        "eslint": "^6.8.0",
-        "eslint-plugin-ava": "^10.2.0",
-        "eslint-plugin-security": "^1.4.0",
-        "lint-staged": "^10.0.7",
-        "nyc": "^15.0.0",
-        "pre-commit": "^1.2.2",
-        "prettier": "1.19.1",
-        "rimraf": "^3.0.2",
-        "ts-node": "^8.6.2",
-        "typescript": "^3.8.2"
-    },
+  "name": "@strong-roots-capital/trace",
+  "version": "1.2.0",
+  "description": "tap function to log a value with optional tag",
+  "keywords": [
+    "tap",
+    "trace"
+  ],
+  "homepage": "https://github.com/strong-roots-capital/trace",
+  "bugs": {
+    "url": "https://github.com/strong-roots-capital/trace/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strong-roots-capital/trace.git"
+  },
+  "license": "ISC",
+  "author": "Eric Crosson <eric.s.crosson@utexas.edu> (https://github.com/EricCrosson)",
+  "main": "dist/src/trace.js",
+  "types": "dist/src/trace.d.ts",
+  "files": [
+    "dist/src/"
+  ],
+  "scripts": {
+    "ava": "ava -v",
+    "build": "tsc",
+    "clean": "rm -rf -- dist",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "format": "prettier --list-different --ignore-unknown .",
+    "format:fix": "prettier --write --ignore-unknown .",
+    "lint": "eslint --ext ts .",
+    "lint:fix": "eslint --ext ts --fix .",
+    "test": "nyc ava"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@ericcrosson/eslint-config": "3.0.0",
+    "@ericcrosson/prettier-config": "1.0.0",
+    "@semantic-release/git": "10.0.1",
+    "@types/node": "^13.7.4",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "5.0.0",
+    "ava": "^3.4.0",
+    "codecov": "^3.6.5",
+    "eslint": "^8.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "2.7.1",
+    "semantic-release": "19.0.3",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.2"
+  },
+  "ava": {
+    "extensions": [
+      "ts"
+    ],
     "files": [
-        "dist/src/"
+      "!dist/**/*.d.ts",
+      "test/**/test-*.ts"
     ],
-    "ava": {
-        "files": [
-            "!dist/**/*.d.ts",
-            "test/**/test-*.ts"
-        ],
-        "extensions": [
-            "ts"
-        ],
-        "require": [
-            "ts-node/register"
-        ]
-    },
-    "nyc": {
-        "include": [
-            "src/*.ts"
-        ],
-        "extension": [
-            ".ts"
-        ],
-        "require": [
-            "ts-node/register"
-        ]
-    },
-    "keywords": [
-        "tap",
-        "trace"
+    "require": [
+      "ts-node/register"
+    ]
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
     ],
-    "publishConfig": {
-        "access": "public"
-    }
+    "include": [
+      "src/*.ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }
