@@ -7,8 +7,7 @@ flycheck_*
 *.*~
 .yo-rc.json
 /dist/
-/.nyc_output
-/coverage.lcov
+/coverage
 /scratch
 /secrets
 /.pre-commit-config.yaml
