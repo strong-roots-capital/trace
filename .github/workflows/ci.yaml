@@ -17,7 +17,9 @@ jobs:
           # test-runner is available
           # - lts/-2
           - lts/-1
-          - lts/*
+          # Node.js has a segfault in latest v18, have to wait until
+          # that's patched to use the latest lts
+          # - lts/*
 
     steps:
       - name: Checkout

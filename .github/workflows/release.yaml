@@ -25,7 +25,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           cache: npm
-          node-version: lts/*
+          # node-version: lts/*
+          # Node.js has a segfault in latest v18, have to wait until
+          # that's patched to use the latest lts
+          node-version: lts/-1
 
       - name: Install dependencies
         run: npm ci
