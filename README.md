@@ -1,10 +1,8 @@
 # trace
 
-[![NPM Package][]](https://npmjs.org/package/@strong-roots-capital/trace)
-[![Build status][]](https://travis-ci.org/strong-roots-capital/trace)
+[![Build Status]](https://github.com/strong-roots-capital/trace/actions/workflows/release.yaml)
 
-[npm package]: https://img.shields.io/npm/v/@strong-roots-capital/trace.svg
-[build status]: https://travis-ci.org/strong-roots-capital/trace.svg?branch=master
+[build status]: https://github.com/strong-roots-capital/trace/actions/workflows/release.yaml/badge.svg?event=push
 
 > tap function to log a value with optional tag
 
