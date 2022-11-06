@@ -12,7 +12,12 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [lts/-2, lts/-1, lts/*]
+        node-version:
+          # Uncomment when Node.js 14 is EOL'd so the built-in
+          # test-runner is available
+          # - lts/-2
+          - lts/-1
+          - lts/*
 
     steps:
       - name: Checkout
