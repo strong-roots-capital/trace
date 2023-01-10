@@ -11,13 +11,13 @@ export function trace(
   ...tag: unknown[]
 ): <T>(value: T) => T {
   return function trace<T>(value: T): T {
-    if (tag.length > 0) {
-      logger(...tag, value)
+    if (tag !== undefined && tag.length > 0) {
+      logger(...tag, value);
     } else {
-      logger(value)
+      logger(value);
     }
-    return value
-  }
+    return value;
+  };
 }
 
 /**
@@ -33,12 +33,12 @@ export function unsafeTraceJson(
 ): <T>(value: T) => T {
   return function trace<T>(value: T): T {
     if (tag.length > 0) {
-      logger(...tag, JSON.stringify(value, null, 2))
+      logger(...tag, JSON.stringify(value, null, 2));
     } else {
-      logger(JSON.stringify(value, null, 2))
+      logger(JSON.stringify(value, null, 2));
     }
-    return value
-  }
+    return value;
+  };
 }
 
 /**
@@ -51,11 +51,11 @@ export function IOtrace(
   return function trace<T>(value: T): () => T {
     return function (): T {
       if (tag.length > 0) {
-        logger(...tag, value)
+        logger(...tag, value);
       } else {
-        logger(value)
+        logger(value);
       }
-      return value
-    }
-  }
+      return value;
+    };
+  };
 }
