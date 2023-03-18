@@ -1,6 +1,6 @@
 {
   "name": "@strong-roots-capital/trace",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "tap function to log a value with optional tag",
   "keywords": [
     "tap",
