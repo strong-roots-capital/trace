@@ -22,7 +22,6 @@
     "dist/src/"
   ],
   "scripts": {
-    "ava": "ava -v",
     "build": "tsc",
     "clean": "rm -rf -- dist",
     "test": "c8 node --require ts-node/register --test test/*.ts"

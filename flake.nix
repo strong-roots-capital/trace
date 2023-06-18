@@ -27,7 +27,6 @@
             hooks = {
               actionlint.enable = true;
               alejandra.enable = true;
-              nix-linter.enable = true;
               prettier = {
                 enable = true;
                 excludes = ["package-lock.json"];
@@ -41,7 +40,7 @@
           };
         };
 
-        devShell = pkgs.mkShell {
+        devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [
             nodejs
           ];
