@@ -27,7 +27,7 @@
     "test": "c8 node --require ts-node/register --test test/*.ts"
   },
   "devDependencies": {
-    "c8": "8.0.1",
+    "c8": "9.1.0",
     "ts-node": "10.9.2",
     "typescript": "5.3.3"
   },
